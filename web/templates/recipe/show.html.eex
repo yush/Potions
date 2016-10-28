@@ -1,0 +1,24 @@
+<h2>Show recipe</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @recipe.name %>
+  </li>
+
+  <li>
+    <strong>Uploaddate:</strong>
+    <%= @recipe.uploadDate %>
+  </li>
+
+  <li>
+      <%= link to: "/" <> CookBook.Image.url({@recipe.file, @recipe}, :original) do %>
+      <img src="/<%= CookBook.Image.url({@recipe.file, @recipe}, :thumb) %>" />
+      <% end %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: recipe_path(@conn, :edit, @recipe) %>
+<%= link "Back", to: recipe_path(@conn, :index) %>

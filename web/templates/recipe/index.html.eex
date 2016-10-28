@@ -1,0 +1,28 @@
+<h2>Listing recipes</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Uploaddate</th>
+      <th>File</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for recipe <- @recipes do %>
+    <tr>
+      <td><%= recipe.name %></td>
+      <td><%= recipe.uploadDate %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: recipe_path(@conn, :show, recipe), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: recipe_path(@conn, :edit, recipe), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: recipe_path(@conn, :delete, recipe), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+

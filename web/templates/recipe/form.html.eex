@@ -1,0 +1,29 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :name, class: "control-label" %>
+    <%= text_input f, :name, class: "form-control" %>
+    <%= error_tag f, :name %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :file, class: "control-label" %>
+    <%= file_input f, :file, class: "form-control" %>
+    <%= error_tag f, :file %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :uploadDate, class: "control-label" %>
+    <%= date_select f, :uploadDate, class: "form-control" %>
+    <%= error_tag f, :uploadDate %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
