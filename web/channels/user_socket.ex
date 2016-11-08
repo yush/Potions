@@ -5,7 +5,8 @@ defmodule CookBook.UserSocket do
   # channel "room:*", CookBook.RoomChannel
 
   ## Transports
-  transport :websocket, Phoenix.Transports.WebSocket
+  transport :websocket, Phoenix.Transports.WebSocket,
+    timeout: 45_000
   # transport :longpoll, Phoenix.Transports.LongPoll
 
   # Socket params are passed from the client and can
@@ -22,6 +23,7 @@ defmodule CookBook.UserSocket do
   def connect(_params, socket) do
     {:ok, socket}
   end
+
 
   # Socket id's are topics that allow you to identify all sockets for a given user:
   #
