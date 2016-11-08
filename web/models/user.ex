@@ -10,6 +10,7 @@ defmodule CookBook.User do
 
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
+    has_many :recipes, CookBook.Recipe 
   end
 
   @doc """

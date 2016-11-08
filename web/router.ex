@@ -17,16 +17,11 @@ defmodule CookBook.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/sessions", SessionController, only: [:new, :create]
-    get "/recipes", RecipeController, :index
-    get "/recipes/:id/edit", RecipeController, :edit
-    get "/recipes/new", RecipeController, :new
-    get "/recipes/:id", RecipeController, :show
-    post "/recipes", RecipeController, :create
-    put "/recipes/:id", RecipeController, :update
-    delete "/recipes/:id", RecipeController, :delete
-    resources "/users", UserController
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
     resources "/categories", CategoryController
+    resources "/users", UserController do
+      resources "/recipes", RecipeController
+    end
   end
 
   # Other scopes may use custom stacks.

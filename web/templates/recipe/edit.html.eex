@@ -1,6 +1,6 @@
 <h2>Edit recipe</h2>
 
 <%= render "form.html", changeset: @changeset,
-                        action: recipe_path(@conn, :update, @recipe) %>
+                        action: user_recipe_path(@conn, :update, @user, @recipe) %>
 
-<%= link "Back", to: recipe_path(@conn, :index) %>
+<%= link "Back", to: user_recipe_path(@conn, @user, :index) %>

@@ -16,7 +16,13 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li><%= if user = current_user(@conn) do %>
+                Logged in as <%= user.user %>
+                <%= link "Logout", to: session_path(@conn, :delete, user.id), method: :delete %>
+                <%= else %>
+                <%= link "Log in", to: session_path(@conn, :new) %>
+                <%= end %>
+            </li>
 
           </ul>
         </nav>
@@ -29,11 +35,8 @@
 
       <main role="main">
         <div class="row">
-            <div id="main" class="col-sm-7 col-sm-push-5" >
+            <div id="main" class="col-sm-12" >
               <%= render @view_module, @view_template, assigns %>
-            </div>
-            <div id="sidebar" class="col-sm-5 col-sm-pull-7" >
-              sidebar
             </div>
         </div>
       </main>

@@ -20,5 +20,5 @@
 
 </ul>
 
-<%= link "Edit", to: recipe_path(@conn, :edit, @recipe) %>
-<%= link "Back", to: recipe_path(@conn, :index) %>
+<%= link "Edit", to: user_recipe_path(@conn, :edit, @user, @recipe) %>
+<%= link "Back", to: user_recipe_path(@conn, :index, @user) %>

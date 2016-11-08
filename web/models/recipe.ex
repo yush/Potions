@@ -8,6 +8,7 @@ defmodule CookBook.Recipe do
     field :file, CookBook.Image.Type
 
     timestamps()
+    belongs_to :user, CookBook.User
   end
 
   @doc """

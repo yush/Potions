@@ -1,6 +1,5 @@
 <div class="jumbotron">
   <h2>Welcome to CookBook</h2>
-  <h3 class="lead"><%= link "Share your taste", to: recipe_path(@conn, :new) %></h3>
 </div>
 
 
