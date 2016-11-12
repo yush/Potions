@@ -37,7 +37,7 @@ config :phoenix, :stacktrace_depth, 20
 config :cookBook, CookBook.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
-  database: "cookbook_dev",
+  password: "sushi",
+  database: "cookbook",
   hostname: "localhost",
   pool_size: 10
