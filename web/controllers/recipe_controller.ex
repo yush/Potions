@@ -91,7 +91,7 @@ defmodule CookBook.RecipeController do
     |> halt
   end
 
-  defp authorize_user(conn, _opts) do
+  def authorize_user(conn, _opts) do
     user = get_session(conn, :current_user)
     if user && Integer.to_string(user.id) == conn.params["user_id"] do
       conn

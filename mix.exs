@@ -19,7 +19,7 @@ defmodule CookBook.Mixfile do
   def application do
     [mod: {CookBook, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :arc_ecto, :comeonin]]
+                    :phoenix_ecto, :postgrex, :arc, :arc_ecto, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,7 +40,8 @@ defmodule CookBook.Mixfile do
      {:cowboy, "~> 1.0"},
      {:arc_ecto, "~> 0.4.4"},
      {:arc, "0.5.3"},
-     {:comeonin, "~>2.3"}]
+     {:comeonin, "~>2.3"},
+     {:exrm, "~> 1.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

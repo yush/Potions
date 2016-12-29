@@ -1,3 +1,4 @@
+
 <h2>Show recipe</h2>
 
 <ul>
@@ -13,8 +14,8 @@
   </li>
 
   <li>
-      <%= link to: "/" <> CookBook.Image.url({@recipe.file, @recipe}, :original) do %>
-      <img src="/<%= CookBook.Image.url({@recipe.file, @recipe}, :thumb) %>" />
+      <%= link to: "/" <> recipe_url(@recipe, :original) do %>
+      <img src="/<%= recipe_url(@recipe, :thumb) %>" />
       <% end %>
   </li>
 

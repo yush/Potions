@@ -1,4 +1,5 @@
 defmodule CookBook.Web do
+
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
@@ -52,6 +53,7 @@ defmodule CookBook.Web do
       import CookBook.Router.Helpers
       import CookBook.ErrorHelpers
       import CookBook.Gettext
+      import CookBook.Helpers
     end
   end
 

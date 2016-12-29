@@ -27,10 +27,10 @@ defmodule CookBook.Image do
   #   version
   # end
 
-  # Override the storage directory:
-  # def storage_dir(version, {file, scope}) do
-  #   "uploads/user/avatars/#{scope.id}"
-  # end
+  #Override the storage directory:
+   def storage_dir(version, {file, scope}) do
+     "priv/static/uploads"
+   end
 
   # Provide a default URL if there hasn't been a file uploaded
   # def default_url(version, scope) do
