@@ -5,6 +5,14 @@
 # is restricted to this project.
 use Mix.Config
 
+config :cookBook, CookBook.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "cookBook_repo",
+  username: "user",
+  password: "pass",
+  hostname: "localhost"
+
+
 # General application configuration
 config :cookBook,
   ecto_repos: [CookBook.Repo]

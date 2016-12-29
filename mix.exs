@@ -19,7 +19,7 @@ defmodule CookBook.Mixfile do
   def application do
     [mod: {CookBook, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :arc, :arc_ecto, :comeonin]]
+                    :phoenix_ecto, :postgrex, :arc, :arc_ecto, :comeonin, :exrm]]
   end
 
   # Specifies which paths to compile per environment.
