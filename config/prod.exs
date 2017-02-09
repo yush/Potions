@@ -23,7 +23,7 @@ config :cookBook, CookBook.Endpoint,
 config :cookBook, CookBook.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "sushi",
+  password: "postgres",
   database: "cookbook",
   hostname: "localhost",
   pool_size: 10

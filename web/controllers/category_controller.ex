@@ -20,7 +20,7 @@ defmodule CookBook.CategoryController do
       {:ok, _category} ->
         conn
         |> put_flash(:info, "Category created successfully.")
-        |> redirect(to: category_path(conn, :index))
+        |> redirect(to: user_category_path(conn, :index, conn.params["user_id"]))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -45,7 +45,7 @@ defmodule CookBook.CategoryController do
       {:ok, category} ->
         conn
         |> put_flash(:info, "Category updated successfully.")
-        |> redirect(to: category_path(conn, :show, category))
+        |> redirect(to: user_category_path(conn, :show, category, conn.assigns[:user]))
       {:error, changeset} ->
         render(conn, "edit.html", category: category, changeset: changeset)
     end
@@ -60,7 +60,7 @@ defmodule CookBook.CategoryController do
 
     conn
     |> put_flash(:info, "Category deleted successfully.")
-    |> redirect(to: category_path(conn, :index))
+    |> redirect(to: user_category_path(conn, :index, conn.params["user_id"]))
   end
 
   def showSidebar(conn, _params) do

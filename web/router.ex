@@ -18,9 +18,9 @@ defmodule CookBook.Router do
 
     get "/", PageController, :index
     resources "/sessions", SessionController, only: [:new, :create, :delete]
-    resources "/categories", CategoryController
     resources "/users", UserController do
       resources "/recipes", RecipeController
+      resources "/categories", CategoryController
     end
   end
 

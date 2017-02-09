@@ -4,7 +4,7 @@ defmodule CookBook.Mixfile do
   def project do
     [app: :cookBook,
      version: "0.0.1",
-     elixir: "~> 1.2",
+     elixir: "~> 1.3",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -19,7 +19,7 @@ defmodule CookBook.Mixfile do
   def application do
     [mod: {CookBook, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :arc, :arc_ecto, :comeonin, :exrm]]
+                    :phoenix_ecto, :postgrex, :arc, :arc_ecto, :comeonin, :distillery]]
   end
 
   # Specifies which paths to compile per environment.
@@ -41,7 +41,7 @@ defmodule CookBook.Mixfile do
      {:arc_ecto, "~> 0.4.4"},
      {:arc, "0.5.3"},
      {:comeonin, "~>2.3"},
-     {:exrm, "~> 1.0"}]
+     {:distillery, "~> 1.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
